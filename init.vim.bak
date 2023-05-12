@@ -1,0 +1,73 @@
+call plug#begin()
+
+" Go Plugin
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+" Indentation
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Line numbers
+set number
+
+" Highlight search results
+set hlsearch
+
+" Syntax highlighting
+syntax on
+
+" Auto-indent
+filetype plugin indent on
+
+" Disable backup files
+set nobackup
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
+
+" 打开 24 位真彩色支持
+set termguicolors
+" 搜索的时候忽略大小字字母
+set ignorecase
+" 若搜索内容中有大写字母，则不再忽略大小写
+set smartcase
+" 高亮第80列
+set colorcolumn=80
+" 高亮光标所在行
+set cursorline
+
+color tender
+" 此处对 tender 主题略做调整，大家可以去掉对比一下效果
+autocmd ColorScheme tender
+\ | hi Normal guibg=#000000
+\ | hi SignColumn guibg=#000000 "
+\ | hi StatusLine guibg=#444444 guifg=#b3deef
+
+" 不显示nvim版本过旧的提示
+let g:go_version_warning = 0
+
+" 将 <leader> 键设置为逗号
+let mapleader = ","
+nnoremap <leader>e :NERDTreeToggle<cr>
+nnoremap <leader>f :FZF<CR>
+
+" Go 语言的配置
+" 启用自动补全
+autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" 启用 LSP
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_highlight_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_function_calls=1
+let g:go_fmt_fail_silently=1
+let g:go_list_type=1
+let g:go_auto_type_info=1
+let g:go_auto_sameids=1
+let g:go_gopls_enabled=1
+let g:go_gopls_options = {'completionDocumentation': true, 'usePlaceholders': true, 'deepCompletion': true}

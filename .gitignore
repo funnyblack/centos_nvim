@@ -1,0 +1,6 @@
+neovim
+.netrwhist
+.gitmodules
+pack
+yarn*
+node_modules
