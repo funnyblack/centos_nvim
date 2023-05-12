@@ -71,7 +71,7 @@ set colorcolumn=80
 set cursorline
 
 " Go debugger
-let g:go_debug_breakpoint_sign = '????
+let g:go_debug_breakpoint_sign = 'o'
 let g:go_list_type = "quickfix"
 let g:go_list_map = "<leader>l"
 let g:go_auto_type_info = 1
