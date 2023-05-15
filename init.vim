@@ -44,7 +44,7 @@ set expandtab
 " Line numbers
 set number
 
-set mouse=a
+set mouse=n
 
 " Highlight search results
 set hlsearch
