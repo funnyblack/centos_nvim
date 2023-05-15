@@ -91,10 +91,14 @@ colorscheme gruvbox
 " \ | hi SignColumn guibg=#000000 "
 " \ | hi StatusLine guibg=#444444 guifg=#b3deef
 
+" 设置ripgrep的规则
+set grepprg=rg\ --vimgrep\ --hidden\ --follow\ --ignore-file=.rgignore\ $*
+
 " 将 <leader> 键设置为分号
 let mapleader = ";"
 nnoremap <leader>e :NERDTreeToggle<cr>
 nnoremap <leader>f :FZF<CR>
+nnoremap <leader>k :Rg<CR>
 
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
