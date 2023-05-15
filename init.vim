@@ -92,7 +92,7 @@ colorscheme gruvbox
 " \ | hi StatusLine guibg=#444444 guifg=#b3deef
 
 " 设置ripgrep的规则
-set grepprg=rg\ --vimgrep\ --hidden\ --follow\ --ignore-file=.rgignore\ $*
+set grepprg=rg\ --vimgrep\ --hidden\ --follow\ --ignore-file=.rgignore\ -w\ $*
 
 " 将 <leader> 键设置为分号
 let mapleader = ";"
