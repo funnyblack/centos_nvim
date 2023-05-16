@@ -44,7 +44,10 @@ set expandtab
 " Line numbers
 set number
 
-set mouse=n
+set mouse=a
+set selection=exclusive
+vnoremap <C-c> "+y
+inoremap <C-v> <Esc>"+pa
 
 " Highlight search results
 set hlsearch
@@ -83,15 +86,6 @@ let g:go_auto_sameids = 1
 syntax on
 set background=dark
 colorscheme gruvbox
-
-" color tender
-" 此处对 tender 主题略做调整，大家可以去掉对比一下效果
-" autocmd ColorScheme tender
-" \ | hi Normal guibg=#000000
-" \ | hi SignColumn guibg=#000000 "
-" \ | hi StatusLine guibg=#444444 guifg=#b3deef
-
-set clipboard+=unnamedplus
 
 " 设置ripgrep的规则
 set grepprg=rg\ --vimgrep\ --hidden\ --follow\ --ignore-file=.rgignore\ -w\ $*
